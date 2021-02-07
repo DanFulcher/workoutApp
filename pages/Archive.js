@@ -1,11 +1,10 @@
 import React, {useCallback} from 'react';
 import {useFocusEffect} from '@react-navigation/native';
-import {ScrollView, View, Text, StyleSheet} from 'react-native';
+import {ScrollView, View, StyleSheet} from 'react-native';
 import {colours} from '../styles';
 
 import PageHeader from '../components/PageHeader';
 import useWorkouts from '../hooks/useWorkouts';
-import SearchBar from '../components/SearchBar';
 import NoData from '../components/NoData';
 import Workouts from '../components/Workouts';
 import CornerButton from '../components/CornerButton';
@@ -23,9 +22,12 @@ const Archive = ({navigation}) => {
     <ScrollView
       contentContainerStyle={styles.scrollView}>
       <View style={styles.body}>
-        <PageHeader title="My Workouts" />
-        <SearchBar />
-        {userWorkouts && userWorkouts.length === 0 ? <NoData message="You don't currently have any workouts" /> : <Workouts data={userWorkouts} /> }
+        <PageHeader title="Welcome to Judy" />
+        {
+          userWorkouts && userWorkouts.length === 0 
+          ? <NoData message="You don't currently have any workouts" /> 
+          : <Workouts data={userWorkouts} />
+        }
         <CornerButton text="New Workout" onPress={() => navigation.navigate('New Workout')} />
       </View>
     </ScrollView>

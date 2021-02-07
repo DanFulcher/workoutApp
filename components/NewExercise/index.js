@@ -73,33 +73,26 @@ const NewExercise = () => {
             <Text style={styles.toggleText}>Reps/ Secs</Text>
           </View>
         </View>
-        <View style={styles.row}>
-          <View style={styles.row_input}>
-            <Label text="Sets" />
-            <TextInput
-              style={styles.input}
-              keyboardType="number-pad"
-              value={activeExercise.sets.toString()}
-              onChangeText={(val) => onSetsChange(val)}
-            />
-          </View>
-          {activeExercise.sets > 1 && ( 
-            <View style={styles.row_input}>
-              <Label text='Rest (secs)' />
-              <TextInput
-                style={styles.input}
-                keyboardType="number-pad"
-                value={activeExercise.rest.toString()}
-                onChangeText={(val) => onRestChange(val)}
-              />
-            </View>
-          )}
-        </View>
+        
+        <Label text="Sets" />
+        <TextInput
+          style={styles.input}
+          keyboardType="number-pad"
+          value={activeExercise.sets.toString()}
+          onChangeText={(val) => onSetsChange(val)}
+        />
+        <Label text='Rest (before next exercise)' />
+        <TextInput
+          style={styles.input}
+          keyboardType="number-pad"
+          value={activeExercise.rest.toString()}
+          onChangeText={(val) => onRestChange(val)}
+        />
       </Card>
-      <View style={step > 0 && styles.actions}>
-      {step > 0 && <Button noFill text="Back" onPress={() => backStep()}/>}
-      <Button text="Next" onPress={() => addExercise()}/>
-    </View>
+      <View style={[styles.actions, step > 0 && styles.actions_row]}>
+        {step > 0 && <Button noFill text="Back" onPress={() => backStep()}/>}
+        <Button text="Next" onPress={() => addExercise()}/>
+      </View>
   </>
   )
 }
@@ -142,9 +135,12 @@ const styles = StyleSheet.create({
     fontFamily: 'OpenSans-SemiBold'
   },
   actions: {
+    marginBottom: 20,
+  },
+  actions_row: {
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'space-between'
   }
 })
 

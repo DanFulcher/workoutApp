@@ -2,12 +2,13 @@ import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import {colours} from '../../styles';
 
+import Workout from './Workout';
+
 const Workouts = ({data}) => {
-  console.log('workouts', data)
   return (
     <View style={styles.body}>
       {data.length && data.map(workout => (
-        <Text>{workout.name}</Text>
+        <Workout key={workout.name} data={workout} />
       ))}
     </View>
   );

@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     backgroundColor: colours.primary,
     padding: 15,
     borderRadius: 10,
-    width: 'auto'
+    width: 'auto',
   },
   noFill: {
     backgroundColor: 'transparent',

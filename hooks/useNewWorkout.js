@@ -16,8 +16,8 @@ export default () => {
     description: '',
     durationType: 'reps',
     duration: 0,
-    sets: 0,
-    rest: 0,
+    sets: 1,
+    rest: 10,
   };
   const [workoutName, setWorkoutName] = useState('');
   const [step, setStep] = useState(0);
@@ -91,12 +91,10 @@ export default () => {
       name: workoutName,
       exercises: exercises
     }
-    console.log(workout);
     try {
       const jsonValue = await AsyncStorage.getItem('workouts');
       let currentWorkouts = jsonValue != null ? JSON.parse(jsonValue) : [];
       currentWorkouts.push(workout);
-      console.log(workout);
       try {
         const newLocalWorkouts = JSON.stringify(currentWorkouts);
         await AsyncStorage.setItem('workouts', newLocalWorkouts);

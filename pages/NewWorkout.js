@@ -17,7 +17,7 @@ const NewWorkout = () => {
   } = useNewWorkout();
   return (
     <ScrollView
-      contentContainerStyle={styles.scrollView}>
+      style={styles.scrollView}>
       <View style={styles.body}>
         <PageHeader back title="New Workout">
           <TouchableOpacity onPress={() => saveWorkout()}>
@@ -36,6 +36,7 @@ const NewWorkout = () => {
 const styles = StyleSheet.create({
   scrollView: {
     flex: 1,
+    flexGrow: 1,
   },
   body: {
     backgroundColor: colours.bg,

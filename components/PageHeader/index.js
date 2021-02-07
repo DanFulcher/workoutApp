@@ -15,7 +15,9 @@ const PageHeader = ({back, title, children}) => {
             <Text style={styles.goBack}>Back</Text>
           </TouchableOpacity>
         )}
-        <PageTitle value={title} />
+        {title && (
+          <PageTitle value={title} />
+        )}
       </View>
       <View style={styles.pageHeader_section}>
         {children}
@@ -29,6 +31,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
+    minHeight: 50,
   },
   pageHeader_section: {
     display: 'flex',
