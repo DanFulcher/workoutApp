@@ -22,8 +22,8 @@ const WorkoutDetails = ({route}) => {
                 ? `${name} x ${duration}` 
                 : `${name} for ${duration} seconds`}
               </Text>
-              {description !== "" && <Text>{description}</Text>}
-              <Text>
+              {description !== "" && <Text style={styles.exerciseDescription}>{description}</Text>}
+              <Text style={styles.exerciseSets}>
                 {`Sets: ${sets.toString()}`}
               </Text>
             </Card>
@@ -45,8 +45,19 @@ const styles = StyleSheet.create({
   exerciseTitle: {
     color: colours.white,
     fontFamily: 'OpenSans-SemiBold',
-    fontSize: 18,
+    fontSize: 21,
   },
+  exerciseDescription: {
+    color: colours.white,
+    fontFamily: 'OpenSans-Bold',
+    fontSize: 14,
+    marginBottom: 10,
+  },
+  exerciseSets: {
+    color: colours.white,
+    fontFamily: 'OpenSans-Light',
+    fontSize: 18,
+  }
 });
 
 export default WorkoutDetails;
