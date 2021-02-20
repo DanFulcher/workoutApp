@@ -1,8 +1,9 @@
 import React, {useCallback} from 'react';
 import {useFocusEffect} from '@react-navigation/native';
-import {ScrollView, View, StyleSheet} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 import {colours} from '../styles';
 
+import Container from '../components/Container';
 import PageHeader from '../components/PageHeader';
 import useWorkouts from '../hooks/useWorkouts';
 import NoData from '../components/NoData';
@@ -19,18 +20,15 @@ const Archive = ({navigation}) => {
     }, []),
   )
   return (
-    <ScrollView
-      contentContainerStyle={styles.scrollView}>
-      <View style={styles.body}>
-        <PageHeader title="Welcome to Judy" />
+    <Container>
+      <PageHeader title="Welcome to Judy" />
         {
           userWorkouts && userWorkouts.length === 0 
           ? <NoData message="You don't currently have any workouts" /> 
           : <Workouts data={userWorkouts} />
         }
         <CornerButton text="New Workout" onPress={() => navigation.navigate('New Workout')} />
-      </View>
-    </ScrollView>
+    </Container>
   )
 }
 

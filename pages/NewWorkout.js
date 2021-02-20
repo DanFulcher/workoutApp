@@ -1,10 +1,10 @@
 import React from 'react';
-import {ScrollView, TouchableOpacity, Text, View, StyleSheet} from 'react-native';
+import {TouchableOpacity, Text, View, StyleSheet} from 'react-native';
 import {colours} from '../styles';
-
 
 import useNewWorkout from '../hooks/useNewWorkout';
 
+import Container from '../components/Container';
 import PageHeader from '../components/PageHeader';
 import Input from '../components/Fields/Text';
 import NewExercise from '../components/NewExercise';
@@ -16,10 +16,8 @@ const NewWorkout = () => {
     saveWorkout,
   } = useNewWorkout();
   return (
-    <ScrollView
-      style={styles.scrollView}>
-      <View style={styles.body}>
-        <PageHeader back title="New Workout">
+    <Container>
+      <PageHeader back title="New Workout">
           <TouchableOpacity onPress={() => saveWorkout()}>
             <Text style={styles.headerCTA}>
               Finish &amp; Save
@@ -28,8 +26,7 @@ const NewWorkout = () => {
         </PageHeader>
         <Input label="Workout Name" value={workoutName} placeholder="eg. Getting Dench" onChange={setWorkoutName} />
         <NewExercise />
-      </View>
-    </ScrollView>
+    </Container>
   )
 }
 
