@@ -18,6 +18,7 @@ export default () => {
     duration: 0,
     sets: 1,
     rest: 10,
+    setsComplete: 0
   };
   const [workoutName, setWorkoutName] = useState('');
   const [step, setStep] = useState(0);

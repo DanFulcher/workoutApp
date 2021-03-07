@@ -8,6 +8,7 @@ import Store from './store/workoutStore';
 import Archive from './pages/Archive';
 import NewWorkout from './pages/NewWorkout';
 import WorkoutDetails from './pages/WorkoutDetails';
+import Workout from './pages/Workout';
 
 const App = () => {
   const Stack =  createStackNavigator();
@@ -24,6 +25,7 @@ const App = () => {
           <Stack.Screen name="Home" component={Archive} />
           <Stack.Screen name="New Workout" component={NewWorkout} />
           <Stack.Screen name="Workout Details" component={WorkoutDetails} />
+          <Stack.Screen name="Workout Page" component={Workout} />
         </Stack.Navigator>
       </NavigationContainer>
     </Store>

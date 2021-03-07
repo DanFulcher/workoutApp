@@ -5,7 +5,11 @@ import { useNavigation } from '@react-navigation/native';
 import { colours } from '../../styles';
 import PageTitle from './PageTitle';
 
-const PageHeader = ({back, title, children}) => {
+const PageHeader = ({
+  back,
+  title,
+  children
+}) => {
   const navigation = useNavigation();
   return (
     <View style={styles.pageHeader}>

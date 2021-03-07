@@ -1,6 +1,6 @@
 import React, {useCallback} from 'react';
 import {useFocusEffect} from '@react-navigation/native';
-import {View, StyleSheet} from 'react-native';
+import {StyleSheet} from 'react-native';
 import {colours} from '../styles';
 
 import Container from '../components/Container';
@@ -15,7 +15,6 @@ const Archive = ({navigation}) => {
 
   useFocusEffect(
     useCallback(() => {
-      // removeValue();
       getWorkouts();
     }, []),
   )

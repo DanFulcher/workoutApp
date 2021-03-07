@@ -18,20 +18,9 @@ export default () => {
     }
     setLoading(false);
   }
-
-  removeValue = async () => {
-    try {
-      await AsyncStorage.removeItem('workouts')
-    } catch(e) {
-      // remove error
-    }
-  
-    console.log('Done.')
-  }
   return {
     getWorkouts,
     userWorkouts,
-    removeValue,
     loading
   }
 }
